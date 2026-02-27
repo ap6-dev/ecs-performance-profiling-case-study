@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="ecs_performance_profiling_case_study"
+run/main_scene="uid://c62dxlgnh1vsf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/vsync/vsync_mode=0
+
+[editor]
+
+movie_writer/disable_vsync=true
 
 [physics]
 
