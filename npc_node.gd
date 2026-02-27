@@ -9,12 +9,12 @@ func _ready() -> void:
 		0.0,
 		randf_range(-1.0, 1.0)
 	)
-	set_process(false)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	##Movement math only (no physics, no rendering logic)
-	##position += velocity * delta
-	##print("NPC processing...")
+func _process(delta: float) -> void:
+	#Movement math only (no physics, no rendering logic)
+	position += velocity * delta
+	#print("NPC processing...")
 	#pass
