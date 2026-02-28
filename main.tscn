@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c62dxlgnh1vsf"]
 
 [ext_resource type="Script" uid="uid://cl5tyrbo7frrl" path="res://benchmark_controller.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvfkqibe656df" path="res://npc_node.tscn" id="2_0xm2m"]
 
 [node name="main" type="Node3D" unique_id=1829032857]
 
 [node name="benchmark_controller" type="Node" parent="." unique_id=1211977994]
 script = ExtResource("1_0xm2m")
+npc_scene = ExtResource("2_0xm2m")
