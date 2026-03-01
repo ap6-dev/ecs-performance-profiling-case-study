@@ -115,8 +115,9 @@ func measure_frame(delta:float):
 		time_accum_sec = 0.0
 
 func _update_chunk(start_idx, end_idx, delta):
+	var d = delta
 	for i in range(start_idx, end_idx):
-		pos[i] += vel[i] * delta
+		pos[i] += vel[i] * d
 
 func _process(_delta):
 	measure_frame(_delta)
