@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://c62dxlgnh1vsf"]
 
 [ext_resource type="Script" uid="uid://cl5tyrbo7frrl" path="res://benchmark_controller.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bvfkqibe656df" path="res://npc_node.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvfkqibe656df" path="res://npc/npc_node.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://c3pvr4bdyt8ki" path="res://tests/default_node_benchmark.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://b4u5ili6m8eoa" path="res://tests/loop_node_benchmark.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://cb3nufhwysens" path="res://tests/aos_benchmark.gd" id="5_lquwl"]
 
 [node name="main" type="Node3D" unique_id=1829032857]
 
 [node name="benchmark_controller" type="Node" parent="." unique_id=1211977994]
 script = ExtResource("1_0xm2m")
+
+[node name="default_node_test" type="Node" parent="." unique_id=1684244799]
+script = ExtResource("3_h2yge")
 npc_scene = ExtResource("2_0xm2m")
+
+[node name="loop_node_test" type="Node" parent="." unique_id=1361023361]
+script = ExtResource("4_1bvp3")
+npc_scene = ExtResource("2_0xm2m")
+
+[node name="aos_test" type="Node" parent="." unique_id=471428165]
+script = ExtResource("5_lquwl")
