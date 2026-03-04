@@ -15,7 +15,8 @@ var measure_frames := 150 #Number of frames we will measure the time of
 var time_accum_sec := 0.0 #Total time accumulated in seconds?
 
 #===============================================================================
-
+# Entering function - Default node benchmark takes too long for more than 10_000
+# nodes. Calls each step in the benchmark and returns the avg process time.
 func node_benchmark(npc_count: int) -> float:
 	if npc_count > 10_000:
 		print("Default-Node(", npc_count, " NPCs): N/A")
@@ -29,7 +30,9 @@ func node_benchmark(npc_count: int) -> float:
 	return msec_avg
 
 #===============================================================================
-
+# Initiates measuring in _process() and waits until all 10 test are done. It 
+# then takes the avg of the 10 tests and returns the avg to the main benchmark
+# script.
 func measure_benchmark(npc_count: int) -> float:
 	printraw("Default-Node(", npc_count, " NPCs): ")
 	
@@ -44,6 +47,9 @@ func measure_benchmark(npc_count: int) -> float:
 
 #===============================================================================
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# Records the frame time and increments the frame counter. Once 
+# "measuring frames" are reached, the avg time is taken and the test counter
+# is incremented. Once 10 tests are completed, stops measuring frame times.
 func _process(delta: float) -> void:
 	if not measuring:
 		return
@@ -65,7 +71,7 @@ func _process(delta: float) -> void:
 		printraw(".")
 
 #===============================================================================
-
+# Resets all variables between tests so proper times are recorded.
 func reset_vars():
 	measuring = false
 	test_counter = 0
@@ -74,7 +80,8 @@ func reset_vars():
 	time_accum_sec = 0.0
 
 #===============================================================================
-
+# Iterate for range(npc_count) to spawn npc nodes. Instantiates node, adds it 
+# to the npcs array, then adds it to the scene tree
 func spawn_npcs(npc_count: int):
 	for i in range(npc_count):
 			var npc = npc_scene.instantiate()
