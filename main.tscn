@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://c3pvr4bdyt8ki" path="res://tests/default_node_benchmark.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://b4u5ili6m8eoa" path="res://tests/loop_node_benchmark.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://cb3nufhwysens" path="res://tests/aos_benchmark.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://c6apgapnhp6y0" path="res://tests/soa_benchmark.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://dx5ypxmllpb1w" path="res://tests/soa_simd_benchmark.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://doruontum7yv2" path="res://tests/soa_simd_thread_test.gd" id="8_5vw27"]
 
 [node name="main" type="Node3D" unique_id=1829032857]
 
@@ -21,3 +24,12 @@ npc_scene = ExtResource("2_0xm2m")
 
 [node name="aos_test" type="Node" parent="." unique_id=471428165]
 script = ExtResource("5_lquwl")
+
+[node name="soa_test" type="Node" parent="." unique_id=1251202680]
+script = ExtResource("6_7mycd")
+
+[node name="soa_simd_test" type="Node" parent="." unique_id=1062195473]
+script = ExtResource("7_272bh")
+
+[node name="soa_simd_thread_test" type="Node" parent="." unique_id=1563283708]
+script = ExtResource("8_5vw27")
