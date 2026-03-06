@@ -19,6 +19,9 @@ var copy_delta := 16.6 #Fake frame time (ms)
 #===============================================================================
 
 func node_benchmark(npc_count: int) -> float:
+	if npc_count > 100_000:
+		print("SoA(", npc_count, " NPCs): N/A")
+		return -1
 	
 	reset_vars()
 	initialize_npc_arrays(npc_count)
@@ -29,7 +32,7 @@ func node_benchmark(npc_count: int) -> float:
 
 #===============================================================================
 func measure_benchmark(npc_count: int) -> float:
-	printraw("SoA SIMD(", npc_count, " NPCs): ")
+	printraw("SoA-Vectors(", npc_count, " NPCs): ")
 	
 	while test_counter < 10:
 		frames(npc_count)

@@ -19,7 +19,7 @@ var copy_delta := 16.6 #Fake frame time (ms)
 
 func node_benchmark(npc_count: int) -> float:
 	if npc_count > 100_000:
-		print(npc_count, ": N/A")
+		print("AoS(", npc_count, " NPCs): N/A")
 		return -1
 	
 	reset_vars()

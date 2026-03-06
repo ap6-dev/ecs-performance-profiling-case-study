@@ -23,7 +23,10 @@ var copy_delta := 16.6 #Fake frame time (ms)
 #===============================================================================
 
 func node_benchmark(npc_count: int) -> float:
-	
+	if npc_count > 100_000:
+		print("SoA(", npc_count, " NPCs): N/A")
+		return -1
+		
 	reset_vars()
 	initialize_npc_arrays(npc_count)
 	var msec_avg : float = measure_benchmark(npc_count)

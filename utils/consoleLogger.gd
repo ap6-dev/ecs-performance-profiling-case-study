@@ -18,9 +18,9 @@ static func print_systems():
 	print("- Loop-based Node3D-per-entity")
 	print("- AoS (Array of Structs)")
 	print("- SoA (Structure of Arrays)")
-	print("- SoA + SIMD")
-	print("- SoA + SIMD + 4 Worker threads")
-	print("- SoA + SIMD + 6 Worker threads\n")
+	print("- SoA + Vector")
+	print("- SoA+Vector + Threads")
+	print("- SoA+Vector+Threads + Chunks\n")
 
 static func print_test_counts():
 	print("ENTITY AMOUNTS")
@@ -32,7 +32,7 @@ static func print_results(test_counts : Array, avg_times : Dictionary):
 	var table_padding = "_____________________________________________________________________"
 	
 	print(table_padding, "RESULTS", table_padding)
-	print(fs % "NPCs", fs % "Default-Node", fs % "Node-Loop", fs % "AoS",fs % "SoA", fs % "SoA + SIMD", fs % "SoA + SIMD + 4T", fs % "SoA + SIMD + 6T", "|")
+	print(fs % "NPCs", fs % "Default-Node", fs % "Node-Loop", fs % "AoS",fs % "SoA", fs % "Swap to Vectors", fs % "+ Worker-Threads", fs % "+ Chunked Data", "|")
 	for count in test_counts.size():
 		printraw("| %-16d" % test_counts[count])
 		for test in avg_times:
