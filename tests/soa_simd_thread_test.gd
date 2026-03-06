@@ -2,7 +2,7 @@ extends Node
 
 var pos : PackedVector3Array
 var vel : PackedVector3Array
-var thread_count := 4
+var thread_count := 6 #Matching threads to physical cores
 var threads := []
 var chunk_size
 var start_idx
