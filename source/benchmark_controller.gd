@@ -36,11 +36,11 @@ func _ready():
 	# await default_node_test.node_benchmark(0) # Test Engine _process time without any NPCs
 	
 	for i in range(npc_counts.size()):
-		#avg_times["Node"].append(await default_node_test.node_benchmark(npc_counts[i]))
-		#avg_times["Loop"].append(loop_node_test.node_benchmark(npc_counts[i]))
-		#avg_times["AoS"].append(aos_test.node_benchmark(npc_counts[i]))
-		#avg_times["SoA"].append(soa_test.node_benchmark(npc_counts[i]))
-		#avg_times["SoA_Vector"].append(soa_vector_test.node_benchmark(npc_counts[i]))
+		avg_times["Node"].append(await default_node_test.node_benchmark(npc_counts[i]))
+		avg_times["Loop"].append(loop_node_test.node_benchmark(npc_counts[i]))
+		avg_times["AoS"].append(aos_test.node_benchmark(npc_counts[i]))
+		avg_times["SoA"].append(soa_test.node_benchmark(npc_counts[i]))
+		avg_times["SoA_Vector"].append(soa_vector_test.node_benchmark(npc_counts[i]))
 		avg_times["SoA_Vector_Thread"].append(soa_vector_thread_test.node_benchmark(npc_counts[i]))
 		avg_times["SoA_Vector_Thread_Chunk"].append(soa_vector_thread_chunk_test.node_benchmark(npc_counts[i]))
 		pass

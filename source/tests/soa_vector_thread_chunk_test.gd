@@ -30,10 +30,10 @@ var _chunk_ends: PackedInt32Array
 
 #===============================================================================
 func node_benchmark(npc_count: int) -> float:
-	print("\nDefined Chunk Data Size: ", CHUNK_DATA_SIZE * 0.001, "KB")
-	print("Each NPC: ", NPC_DATA_SIZE, " Bytes")
-	print("Total NPCs: ", npc_count)
-	print(npc_chunk_size, " NPCs per chunk")
+	#print("\nDefined Chunk Data Size: ", CHUNK_DATA_SIZE * 0.001, "KB")
+	#print("Each NPC: ", NPC_DATA_SIZE, " Bytes")
+	#print("Total NPCs: ", npc_count)
+	#print(npc_chunk_size, " NPCs per chunk")
 	
 	reset_vars()
 	initialize_npc_arrays(npc_count)
@@ -50,7 +50,7 @@ func _setup_persistent_threads(npc_count: int):
 	semaphores_done.clear()
 	_shutdown = false
 	chunk_count = ceil(float(npc_count) / npc_chunk_size)
-	print("No. of Chunks: ", chunk_count)
+	#print("No. of Chunks: ", chunk_count)
 	_chunk_starts.resize(chunk_count)
 	_chunk_ends.resize(chunk_count)
 	

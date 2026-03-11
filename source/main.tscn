@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://bajfup5hfkdhn"]
+
+[ext_resource type="Script" path="res://benchmark_controller.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" path="res://npc/npc_node.tscn" id="2_0xm2m"]
+[ext_resource type="Script" path="res://tests/default_node_benchmark.gd" id="3_h2yge"]
+[ext_resource type="Script" path="res://tests/loop_node_benchmark.gd" id="4_1bvp3"]
+[ext_resource type="Script" path="res://tests/aos_benchmark.gd" id="5_lquwl"]
+[ext_resource type="Script" path="res://tests/soa_benchmark.gd" id="6_7mycd"]
+[ext_resource type="Script" path="res://tests/soa_vector_benchmark.gd" id="7_272bh"]
+[ext_resource type="Script" path="res://tests/soa_vector_thread_test.gd" id="8_5vw27"]
+[ext_resource type="Script" path="res://tests/soa_vector_thread_chunk_test.gd" id="9_kek77"]
+
+[node name="main" type="Node3D"]
+
+[node name="benchmark_controller" type="Node" parent="."]
+script = ExtResource("1_0xm2m")
+
+[node name="default_node_test" type="Node" parent="."]
+script = ExtResource("3_h2yge")
+npc_scene = ExtResource("2_0xm2m")
+
+[node name="loop_node_test" type="Node" parent="."]
+script = ExtResource("4_1bvp3")
+npc_scene = ExtResource("2_0xm2m")
+
+[node name="aos_test" type="Node" parent="."]
+script = ExtResource("5_lquwl")
+
+[node name="soa_test" type="Node" parent="."]
+script = ExtResource("6_7mycd")
+
+[node name="soa_vector_test" type="Node" parent="."]
+script = ExtResource("7_272bh")
+
+[node name="soa_vector_thread_test" type="Node" parent="."]
+script = ExtResource("8_5vw27")
+
+[node name="soa_vector_thread_chunk_test" type="Node" parent="."]
+script = ExtResource("9_kek77")

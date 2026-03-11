@@ -26,7 +26,7 @@ var _chunk_ends: PackedInt32Array
 #===============================================================================
 func node_benchmark(npc_count: int) -> float:
 	if npc_count > 100_000:
-		print("SoA(", npc_count, " NPCs): N/A")
+		print("SoA-Vec-Thread(", npc_count, " NPCs): N/A")
 		return -1
 	
 	reset_vars()
