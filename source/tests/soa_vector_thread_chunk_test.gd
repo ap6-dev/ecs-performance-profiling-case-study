@@ -8,7 +8,7 @@ var thread_count = max(1, (logical / 2) - 1)
 var threads: Array[Thread] = []
 var semaphores_start: Array[Semaphore] = []
 var semaphores_done: Array[Semaphore] = []
-const CHUNK_DATA_SIZE := 64 * 1024 #chunk size in bytes for cache friendly processing
+const CHUNK_DATA_SIZE := 16 * 1024 #chunk size in bytes for cache friendly processing
 const NPC_DATA_SIZE = 24 #data size of each npc in bytes
 var npc_chunk_size := floori(CHUNK_DATA_SIZE / NPC_DATA_SIZE) #number of npcs in each chunk
 var chunk_count
