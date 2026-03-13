@@ -8,4 +8,4 @@ I have developed a benchmark Godot project that tests various processing paradig
 100_000, and 1_000_000 (within reason based on process times). The benchmark explores manipulating the default godot npc nodes
 in _process, within a code loop, ECS-style data only NPCs in singular/separate arrays, data only NPCs utilizing a Vector3 array,
 data only NPCs existing in the Vector3 array with multithreading, and lastly data only NPCs exisiting in the Vector3 array with
-multithreading and cache friendly batching.
+multithreading and cache friendly batching
