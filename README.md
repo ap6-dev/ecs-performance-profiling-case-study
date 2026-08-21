@@ -1,6 +1,6 @@
 # The Problem
 The Godot game engine excels at providing developers with a smooth and quick development process, but its performance
-begins to drop as more and more entities are added due to the node tree overhead. Currently there is not a detailed
+begins to drop as more and more entities are added due to the node tree overhead. Currently there isn't a detailed
 breakdown of maintaining or even increasing performance at such high entity counts.
 > This case study focuses only on processing speed and excludes rendering (I will address rendering at a different time).
 # The Solution
